@@ -32,11 +32,6 @@ export function validateProduct(product: Product) {
         errors.push('올바르지 않은 가격입니다');
     }
 
-    // 원가가 정가보다 높은 경우 체크
-    if (product.originalPrice && product.price && product.originalPrice < product.price) {
-        errors.push('원가가 정가보다 낮습니다');
-    }
-
     // 평점 범위 체크
     if (product.rating && (product.rating < 0 || product.rating > 5)) {
         errors.push('평점은 0-5 사이여야 합니다');
